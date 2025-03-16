@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebToDoList</title>
+    <link rel="stylesheet" href="css.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+</head>
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class = "image-text">
+                <span class="image">
+                    <img src="logo.png" alt="logo">
+                </span>
+
+                <div class="text header-text">
+                    <span class="name">WebToDoList</span>
+                    <span class="nick"><br>ETA</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                <li class="search-box">
+                    <i class='bx bx-search icon' ></i>
+                    <input typ="text" placeholder="Search...">
+                </li>
+                <ul class="menu-links">
+                    <li class="nav-links">
+                        <a href="#">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                </li>
+                <ul class="menu-links">
+                    <li class="nav-links">
+                        <a href="#">
+                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                            <span class="text nav-text">Revenue</span>
+                        </a>
+                    </li>
+                </li>
+                <ul class="menu-links">
+                    <li class="nav-links">
+                        <a href="#">
+                            <i class='bx bx-bell icon' ></i>
+                            <span class="text nav-text">Notifications</span>
+                        </a>
+                    </li>
+                </li>
+                <ul class="menu-links">
+                    <li class="nav-links">
+                        <a href="#">
+                            <i class='bx bx-pie-chart icon' ></i>
+                            <span class="text nav-text">Analytics</span>
+                        </a>
+                    </li>
+                </li>
+                <ul class="menu-links">
+                    <li class="nav-links">
+                        <a href="#">
+                            <i class='bx bx-heart icon' ></i>
+                            <span class="text nav-text">Likes</span>
+                        </a>
+                    </li>
+                </li>
+                <ul class="menu-links">
+                    <li class="nav-links">
+                        <a href="#">
+                            <i class='bx bx-wallet icon' ></i>
+                            <span class="text nav-text">Wallets</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="#">
+                        <i class='bx bx-log-out icon' ></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="moon-sun">
+                        <i class='bx bx-moon icon moon' ></i>
+                        <i class='bx bx-sun icon sun' ></i>
+                    </div>
+                    <span class="mode-text text">Dark Mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+            </div>
+        </div>
+    </nav>
+
+    <section class="home">
+        <div class="text">Dashboard</div>
+            <div class="todo-container">
+                <div class="todomaintext">
+                    <p>Tasks</p>
+                </div>
+                <div class="task-sections">
+                    
+                    <div class="task-column1" id="all-tasks">
+                        <div class="task-header">
+                            <span>All</span>
+                        </div>
+                        <div class="input-container">
+                            <input id="add-task-btn" class="add-task-btn" placeholder="Enter a new task">
+                            <div class="menu-icon" id="menu-icon">
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                            </div>
+                            <div class="menumini" id="menumini-1">
+                                <ul>
+                                    <li><a href="#" class="create-action"><div class="createcss">Create</div></a></li>
+                                    <li><a href="#" class="delete-action"><div class="deletecss">Delete</div></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="task-list" id="all-task-list-1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    </div>
+
+                    <div class="task-column2" id="all-tasks">
+                        <div class="task-header">
+                            <span>Not completed</span>
+                        </div>
+                        <div class="input-container">
+                            <input id="add-task-btn" placeholder="Enter a new task">
+                            <div class="menu-icon">
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                            </div>
+                            <div class="menumini">
+                        <ul>
+                            <li><a href="#" class="create-action"><div class="createcss">Create</div></a></li>
+                            <li><a href="#" class="delete-action"><div class="deletecss">Delete</div></a></li>
+                        </ul>
+                    </div>
+                        </div>
+                        <div class="task-list" id="all-task-list-1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    </div>
+                    
+                    <div class="task-column3" id="all-tasks">
+                        <div class="task-header">
+                            <span>Completed</span>
+                        </div>
+                        <div class="input-container">
+                            <input id="add-task-btn" placeholder="Enter a new task">
+                            <div class="menu-icon">
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                            </div>
+                            <div class="menumini">
+                        <ul>
+                            <li><a href="#" class="create-action"><div class="createcss">Create</div></a></li>
+                            <li><a href="#" class="delete-action"><div class="deletecss">Delete</div></a></li>
+                        </ul>
+                    </div>
+                        </div>
+                        <div class="task-list" id="all-task-list-1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    </div>
+            </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="menumini.js"></script>
+</body>
+</html>
